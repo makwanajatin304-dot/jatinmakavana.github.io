@@ -681,7 +681,9 @@
     </div>
 
     <div class="reveal">
-      <div class="contact-form">
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+<input type="hidden" name="access_key" value="1c4310f0-9e54-42e5-811e-09d96652f074">
         <div class="form-row">
           <div class="form-group">
             <label>Your Name</label>
@@ -701,8 +703,8 @@
           <textarea id="fmessage" placeholder="Aapka message yahan likhein..."></textarea>
         </div>
         <div>
-          <button class="btn btn-primary" onclick="handleSend()">Message Bhejein →</button>
-        </div>
+         <button type="submit" class="btn btn-primary">Message Bhejein →</button>
+       </form>
         <div class="form-success" id="form-success">
           ✅ Message mil gaya! Jaldi jawab dunga.
         </div>
@@ -760,15 +762,7 @@
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
   /* Contact */
-  function handleSend() {
-    const n=document.getElementById('fname').value.trim();
-    const em=document.getElementById('femail').value.trim();
-    const msg=document.getElementById('fmessage').value.trim();
-    if(!n||!em||!msg){ alert('Naam, Email aur Message zaroori hai!'); return; }
-    const s=document.getElementById('form-success');
-    s.style.display='block';
-    setTimeout(()=>s.style.display='none',5000);
-  }
+  
 </script>
 </body>
 </html>
